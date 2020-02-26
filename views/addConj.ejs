@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" method="POST" action=  "/conjunction/add" >
+        <div class="form-group">
+          <label for="TraderId">Trader's Name</label>
+          <select name="TraderId">
+              <option value="">---SELECT---</option>
+            <% for(let i = 0; i < traders.length; i++){ %>
+                <option value= <%= traders[i].dataValues.id %> ><%= traders[i].dataValues.name %></option>
+            <%}%>
+          </select>
+          <label for="CommodityId">Commodity Name</label>
+          <select name="CommodityId">
+            <option value="">---SELECT---</option>
+          <% for(let i = 0; i < commodities.length; i++){ %>
+              <option value= <%= commodities[i].dataValues.id %> ><%= commodities[i].dataValues.name %></option>
+          <%}%>
+        </select>
+          <label for="price">Price</label>
+          <input type="number" name="price" class="form-control" id="inputAddress"  required>
+          <label for="date">Date</label>
+          <input type="date" name="date" class="form-control" id="inputAddress"  required>
+          <label for="location">Location</label>
+          <input type="text" name="location" class="form-control" id="inputAddress"  required>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button> <a href="/" type="submit" class="btn btn-danger">Cancel</a>
+    </form>
+</body>
+</html>
