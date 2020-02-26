@@ -1,7 +1,8 @@
 const { Commodity } = require('./../models')
 class ControllerComm{
     static getComm(req,res){
-        res.send(`LIST COMMODITIES`)
+        // res.send(`LIST COMMODITIES`)
+        res.render('home')
     }
     static getAdd(req,res){
         res.send(`form add comm`)
