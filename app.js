@@ -4,6 +4,7 @@ const port = 3002;
 const router = require('./routers/index');
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended:true}));
 
