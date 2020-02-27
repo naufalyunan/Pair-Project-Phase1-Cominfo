@@ -3,6 +3,25 @@ class ControllerConj{
     static getConj(req,res){
         res.send(`LIST CONJUNCTION INCLUDE INCLUDE`)
     }
+    static getConjByName(req,res){
+        let name = req.params.name
+        CommodityTrader.findAll({
+            include: [Trader, Commodity]
+        })
+            .then(commodityTraders => {
+                let searched = []
+                commodityTraders.forEach(el => {
+                    if(el.dataValues.Commodity.dataValues.name === name){
+                        searched.push(el)
+                    }
+                })
+                res.render('table-commodity', { searched })
+                
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
     static getAdd(req,res){
         Trader.findAll()
             .then(traders => {
