@@ -22,20 +22,17 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-                <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
+    
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
             </form><!-- /form -->
-            <a href="#" class="forgot-password">
-                Forgot the password?
-            </a>
-            <a href="#" class="forgot-password">
-                Create Acount
+            <a href="/traders/add" class="forgot-password">
+                Create Account
             </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
+    <% if(errors) { %>
+        <h2 style="text-align: center; color: red;background-color: rgb(112, 110, 110);"> <%= errors %></h2>
+    <%}%>
+    
 </body>
 </html>
