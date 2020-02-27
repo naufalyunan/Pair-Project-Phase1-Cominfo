@@ -15,23 +15,52 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% for(let i = 0; i < result.length; i++){ %>
-                <a class="dropdown-item" href="#"><%= result[i].DISTINCT %></a>
+                <a class="dropdown-item" href="<%= `/conjunction/${result[i].DISTINCT}` %>" ><%= result[i].DISTINCT %></a>
               <%}%>
             </div>
-          </li>
-          <li class="nav-item active">
-             <a class="nav-link" href="#">Hubungi Kami<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
               <a class="nav-link" href="/traders/add">Add Trader<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/commodities/add">Add Commodity<span class="sr-only">(current)</span></a>
+<<<<<<< HEAD
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/conjunction/add">Add data<span class="sr-only">(current)</span></a>
       </li>            
       </ul>
+=======
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/conjunction/add">Add data<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <div class="icon mt-2">
+          <h5>
+            <i class="fas fa-cart-arrow-down ml-3 mr-3"></i>
+            <!-- <!-- <i class="fas fa-envelope mr-3"></i> -->
+            <i class="fas fa-bell mr-3"></i>
+          </h5>
+        </div>
+        <ul class="navbar-nav ml-auto ">
+          <% if(!req.session.isLogin){%>
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+          </li> 
+          <%}%>
+          <% if(req.session.isLogin){%>
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><%= req.session.username %><span class="sr-only">(current)</span></a>
+            </li> 
+          <%}%>
+          <% if(req.session.isLogin){%>
+            <li class="nav-item active">
+              <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+            </li> 
+          <%}%>
+        </ul>
+>>>>>>> 01b576c2ba8e0bc04a7e10b195ef56a34b64be10
       </div>
   </div>
 </nav>

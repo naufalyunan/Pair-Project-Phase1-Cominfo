@@ -1,27 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <%- include('../partials/font-awesome-css.ejs')%>
-    <link rel="stylesheet" href="../public/style.css">
-    <title>Homepage</title>
-  </head>
-  <body>
-    <%- include('../partials/bootstrap-navbar.ejs')%>
-        <div class="row mt-5 no-gutters">
-          <div class="col-md-2 bg-light">
-              <ul class="list-group list-group-flush p-2 pt-5">
-                  <li class="list-group-item bg-success"><i class="fas fa-list"></i> DAFTAR KOMODITAS</li>
-                  <% for(let i = 0; i < commodities.length; i++){ %>
-                    <li class="list-group-item"><i class="fas fa-angle-right"></i> <%= commodities[i].name %></li>
-                  <%}%>
-                </ul>
-          </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <%- include('../partials/font-awesome-css.ejs')%>
+  <link rel="stylesheet" href="../public/style.css">
+  <title>Homepage</title>
+</head>
+
+<body>
+  <%- include('../partials/bootstrap-navbar.ejs')%>
+  <div class="row mt-5 no-gutters">
+    <div class="col-md-2 bg-light">
+      <ul class="list-group list-group-flush p-2 pt-5">
+        <li class="list-group-item bg-success"><i class="fas fa-list"></i> DAFTAR KOMODITAS</li>
+        <% for(let i = 0; i < commodities.length; i++){ %>
+        <li class="list-group-item"><i class="fas fa-angle-right"></i> <a href="<%=`/commodities/${commodities[i].name}` %>" ><%= commodities[i].name %></a></li>
+        <%}%>
+      </ul>
+      <a href="#" class="btn btn-primary" data-target="#produk1" data-toggle="modal">Detail</a>
+    </div>
+
           <div class="col-md-10 mt-5">
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
@@ -46,6 +51,7 @@
                 </div>
 
                 <h4 class="text-center font-weight-bold m-4">PRODUK TERBARU</h4>
+<<<<<<< HEAD
                 <div class="row mx-auto">
                   <% for(let i = 0; i < commodityTraders.length; i++){%>
                     <div class="card" mr-2 ml-2 style="width: 16rem;">
@@ -59,6 +65,75 @@
                     </div>
                   <%}%>
                 <br>
+=======
+      <div class="row mx-auto">
+        <% for(let i = 0; i < commodityTraders.length; i++){%>
+        <div class="card" mr-2 ml-2 style="width: 16rem;">
+          <img src="<%= commodityTraders[i].image %>" class="card-img-top" alt="headphone">
+          <div class="card-body bg-light text-center">
+            <h5 class="card-title"><%= commodityTraders[i].name %></h5>
+            <i class="fas fa-star text-success"></i>
+            <i class="fas fa-star text-success"></i>
+            <i class="fas fa-star text-success"></i>
+            <i class="fas fa-star-half-alt text-success"></i>
+            <i class="far fa-star"></i><br><br>
+            <a href="#" class="btn btn-danger">Rp <%= commodityTraders[i].avg %></a>
+          </div>
+        </div>
+        <%}%>
+        <br>
+      </div>
+            <div class="modal fade" id="produk1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <img src="img/produk/headphone.jpg" alt="headphone">
+                      </div>
+                      <div class="col-md-6">
+                        
+                        <table style="text-align: center;" class="table">
+                          <tr>
+                            <th colspan="3" >2019</th>
+                          </tr>
+                          <tr>
+                            <td><a href="/1/2019">January</a></td>
+                            <td><a href="/2/2019">February</a></td>
+                            <td><a href="/3/2019">March</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="/4/2019">April</a></td>
+                            <td><a href="/5/2019">May</a></td>
+                            <td><a href="/6/2019">June</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="/7/2019">July</a></td>
+                            <td><a href="/8/2019">August</a></td>
+                            <td><a href="/9/2019">September</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="/10/2019">October</a></td>
+                            <td><a href="/11/2019">November</a></td>
+                            <td><a href="/12/2019">December</a></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <a class="btn btn-danger" data-dismiss="modal">KEMBALI</a>
+                    <a class="btn btn-primary" href="/traders/add"> BELI</a>
+                  </div>
+                </div>
+              </div>
+>>>>>>> 01b576c2ba8e0bc04a7e10b195ef56a34b64be10
             </div>
         </div>
 

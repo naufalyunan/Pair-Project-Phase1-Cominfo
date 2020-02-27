@@ -1,10 +1,9 @@
 'use strict';
+const averaging = require('./../helper/helper')
 module.exports = (sequelize, DataTypes) => {
   class CommodityTrader extends sequelize.Sequelize.Model {
     static getAverage(arrays){
-      let sum = arrays.reduce((a, b) => a + b, 0)
-      let average = sum/arrays.length
-      return average
+      return averaging(arrays)
     }
   }
 
