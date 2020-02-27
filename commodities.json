@@ -1,32 +1,42 @@
 [
     {
-        "name": "Bawang Merah"
+        "name": "Bawang Merah",
+        "image": "https://imgur.com/9ef733d5-65b8-40b2-8342-59560b475963"
     },
     {
-        "name": "Bawang Putih"
+        "name": "Bawang Putih",
+        "image": "https://i.imgur.com/rqHXzhr.jpg"
     },
     {
-        "name": "Bawang Bombay"
+        "name": "Bawang Bombay",
+        "image": "https://i.imgur.com/vQNK7uj.jpg"
     },
     {
-        "name": "Beras Thailand"
+        "name": "Beras Thailand",
+        "image": "https://imgur.com/5f59c35b-f09a-461f-aa72-2c058e9d8657"
     },
     {
-        "name": "Beras Ramos"
+        "name": "Beras Ramos",
+        "image" : "https://imgur.com/ec5f46ea-6793-4cff-9298-2abc9d4dbcff"
     },
     {
-        "name": "Cabe Merah Keriting"
+        "name": "Cabe Merah Keriting",
+        "image": "https://i.imgur.com/SKwpjx9.jpg"
     },
     {
-        "name": "Cabe Rawit"
+        "name": "Cabe Rawit",
+        "image": "https://imgur.com/43400efc-32f2-4972-a1d2-ea9689978137"
     },
     {
-        "name": "Cabe Hijau Keriting"
+        "name": "Cabe Hijau Keriting",
+        "image": "https://imgur.com/378f3056-5c29-4a45-b032-da0417dbcb65"
     },
     {
-        "name": "Gula Pasir"
+        "name": "Gula Pasir",
+        "image": "https://imgur.com/a74e124a-7f20-4cd4-b967-d545cc2541b5"
     },
     {
-        "name": "Gula Jawa"
+        "name": "Gula Jawa",
+        "image": "blob:https://imgur.com/eca25e51-6b6e-4fc0-aa5d-738abf5802f1"
     }
 ]
