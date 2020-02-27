@@ -4,10 +4,12 @@
 /*
  * General styles
  */
- body, html {
+ body {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    background-image: url('https://i.imgur.com/KbKuehv.jpg');
+    background-size: cover;
+    /* background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33)); */
 }
 
 .card-container.card {
@@ -29,10 +31,11 @@
  */
 .card {
     background-color: #F7F7F7;
+    opacity: 0.9;
     /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
-    margin-top: 50px;
+    margin-top: 20px;
     /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -138,4 +141,14 @@
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+
+#login-trader {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    color: #F7F7F7;
 }
