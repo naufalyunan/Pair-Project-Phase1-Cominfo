@@ -27,15 +27,24 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
+                          <th>Trader Name</th>
+                          <th>Commodity Name</th>
+                          <th>Price</th>
+                          <th>Date</th>
+                          <th>Location</th>
                         </tr>
                       </thead>
                       <tbody>
-                        
+                        <% for(let i = 0; i < searched.length; i++){%>
+                          <tr>
+                            <td> <%= i + 1 %> </td>
+                            <td> <%= searched[i].dataValues.Trader.dataValues.name %> </td>
+                            <td> <%= searched[i].dataValues.Commodity.dataValues.name %> </td>
+                            <td> <%= searched[i].dataValues.price %> </td>
+                            <td> <%= searched[i].dataValues.date %> </td>
+                            <td> <%= searched[i].dataValues.location %> </td>
+                          </tr>
+                        <%} %>
                       </tbody>
                     </table>
                   </div>
