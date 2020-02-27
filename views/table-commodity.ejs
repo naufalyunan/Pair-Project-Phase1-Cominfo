@@ -55,6 +55,11 @@
     });
   </script> -->
     <title>Commodity Table</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
   <canvas id="myChart" width="900" height="500"></canvas>
@@ -63,10 +68,6 @@
                 <div class="card-header py-3">
                   <div class="display-flex align-center">
                     <h6 class="m-0 font-weight-bold text-dark">TABLE COMMODITIES</h6>
-                    <div class="ml-auto display-flex align-center">
-                      <input type="text" name="" class="form-control" placeholder="Search">
-                      <button class="btn btn-md btn-primary ml-2">Search</button>
-                    </div>
                   </div>
                 </div>
                 <div class="card-body">
@@ -111,6 +112,7 @@
                           <th>Price</th>
                           <th>Date</th>
                           <th>Location</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -122,6 +124,7 @@
                             <td> <%= searched[i].dataValues.price %> </td>
                             <td> <%= searched[i].dataValues.date %> </td>
                             <td> <%= searched[i].dataValues.location %> </td>
+                            <td> <a href="/conjunction/edit/<%= searched[i].dataValues.id %>" class="btn btn-primary">Edit</a> <a href="conjunction/delete/<%= searched[i].dataValues.id %>" class="btn btn-danger">Delete</a></td>
                           </tr>
                         <%} %>
                       </tbody>

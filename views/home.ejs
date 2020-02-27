@@ -21,7 +21,7 @@
   <div class="row mt-5 no-gutters">
       <div id="admin-sidebar" class="col-md-2 mt-5 p-x-0 p-y-3">
         <ul class="sidenav admin-sidenav list-unstyled">
-          <li class="list-group-item bg-success"> DAFTAR KOMODITAS</li>
+          <li class="list-group-item bg-dark text-white"> DAFTAR KOMODITAS</li>
           <% for(let i = 0; i < commodities.length; i++){ %>
           <li class="view overlay"><a href="<%=`/commodities/${commodities[i].name}` %>" ><%= commodities[i].name %></a></li>
           <%}%>
@@ -41,6 +41,9 @@
                     </div>
                     <div class="carousel-item">
                       <img src="https://i.imgur.com/MfdDKbZ.jpg" class="d-block w-100" alt="slide3">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="https://i.imgur.com/ApPb5Zt.png" class="d-block w-100" alt="slide4">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -136,29 +139,28 @@
             </div>
             <div class="col-md-3">
                 <h5>TENTANG KAMI</h5>
-                <p>MyShop is a digital loyalty and marketplace platform, on a mission to create a world of Smarter Shoppers. Founded in 2019, My Shop has since established its online presence in 7 APAC countries and offices in 8 countries.</p>
+                <p>Commodity Info adalah aplikasi tugas akhir fase 1 hacktiv8. Web ini berisi proses update harga kebutuhan pokok di masyarakat dimana proses ini memerlukan partisipasi aktif dari pedagang</p>
             </div>
             <div class="col-md-3">
-                <h5>MITRA KERJASAMA</h5>
+                <h5>INSTRUKTUR</h5>
                 <ul>
-                  <li>GOJEK</li>
-                  <li>GRAB</li>
-                  <li>JNE</li>
-                  <li>PT. POS INDONESIA</li>
-                  <li>J&T</li>
-                  <li>TIKI</li>
+                  <li>Isro Tri Pambudi</li>
+                  <li>Edison</li>
+                  <li>Zaen</li>
+                  <li>Afifah Rahma</li>
                 </ul>
             </div>
             <div class="col-md-3">
-                <h5>HUBUNGI KAMI</h5>
+                <h5>KONSTRIBUTOR</h5>
                 <ul>
-                  <li>0812-7106-2214</li>
+                  <li><a href="https://github.com/naufalyunan" style="color: #ffffff;">Naufal Yunan</a></li>
+                  <li><a href="https://github.com/ahmadwaluyo" style="color: #ffffff;">Ahmad Waluyo</a></li>
                 </ul>
             </div>
           </div>
         </footer>
         <div style="width: 100%;" class="copyright text-center text-white bg-success p-1">
-          <p style="margin: auto;">Developed by Commodity Info Copyright 2020</p>
+          <p style="margin: auto;">Developed by Commodity Info &copy; Copyright 2020</p>
         </div>
 
     <!-- Optional JavaScript -->
