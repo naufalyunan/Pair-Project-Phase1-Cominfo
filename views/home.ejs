@@ -51,6 +51,21 @@
                 </div>
 
                 <h4 class="text-center font-weight-bold m-4">PRODUK TERBARU</h4>
+<<<<<<< HEAD
+                <div class="row mx-auto">
+                  <% for(let i = 0; i < commodityTraders.length; i++){%>
+                    <div class="card" mr-2 ml-2 style="width: 16rem;">
+                        <img src="https://i.imgur.com/oeWynJu.jpg" class="card-img-top" alt="img">
+                        <div class="card-body bg-light text-center">
+                            <h5 class="card-title"><%= commodityTraders[i].name %></h5>
+                              <br>
+                            <a href="#" class="btn btn-primary" data-toggle="modal">Detail</a>
+                            <a href="#" class="btn btn-success">Rp <%= commodityTraders[i].avg %></a>
+                        </div>
+                    </div>
+                  <%}%>
+                <br>
+=======
       <div class="row mx-auto">
         <% for(let i = 0; i < commodityTraders.length; i++){%>
         <div class="card" mr-2 ml-2 style="width: 16rem;">
@@ -118,10 +133,11 @@
                   </div>
                 </div>
               </div>
+>>>>>>> 01b576c2ba8e0bc04a7e10b195ef56a34b64be10
             </div>
         </div>
 
-        <footer id="footer" class="bg-dark text-white p-5">
+        <footer id="footer" class="bg-dark text-white p-5 mt-5">
           <div class="row">
             <div class="col-md-3">
                 <h5>LAYANAN PELANGGAN</h5>
