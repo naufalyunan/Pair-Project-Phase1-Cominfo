@@ -1,32 +1,42 @@
 [
     {
-        "name": "Bawang Merah"
+        "name": "Bawang Merah",
+        "image": "https://cf.shopee.co.id/file/1e2ad8e18b1a08d2131cf1c57f5b4ab9"
     },
     {
-        "name": "Bawang Putih"
+        "name": "Bawang Putih",
+        "image": "https://i.imgur.com/rqHXzhr.jpg"
     },
     {
-        "name": "Bawang Bombay"
+        "name": "Bawang Bombay",
+        "image": "https://i.imgur.com/vQNK7uj.jpg"
     },
     {
-        "name": "Beras Thailand"
+        "name": "Beras Thailand",
+        "image": "https://ds393qgzrxwzn.cloudfront.net/resize/m500x500/cat1/img/images/0/VivSZy9bB5.jpg"
     },
     {
-        "name": "Beras Ramos"
+        "name": "Beras Ramos",
+        "image" : "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/7/10/12778725/12778725_f137b5d1-4410-4cbf-9743-cbae2141a14d_972_1296.jpg"
     },
     {
-        "name": "Cabe Merah Keriting"
+        "name": "Cabe Merah Keriting",
+        "image": "https://i.imgur.com/SKwpjx9.jpg"
     },
     {
-        "name": "Cabe Rawit"
+        "name": "Cabe Rawit",
+        "image": "https://cdns.klimg.com/dream.co.id/resized/640x320/news/2019/09/24/118300/cara-menanam-cabe-pot-polybag-190924s-rev190925.jpg"
     },
     {
-        "name": "Cabe Hijau Keriting"
+        "name": "Cabe Hijau Keriting",
+        "image": "https://4.bp.blogspot.com/-5LjLEtjS4F4/WDSIlExvmPI/AAAAAAAAAOI/PGqHrRyHrJQPZW1tv0MgY41vUh_RL7IxACLcB/s640/Fresh_Green_Chilli.jpg"
     },
     {
-        "name": "Gula Pasir"
+        "name": "Gula Pasir",
+        "image": "https://d324bm9stwnv8c.cloudfront.net/Pemanis_Rendah_Kalori_Sebagai_Pengganti_Gula_Pasir,_Amankah-halodoc.jpg"
     },
     {
-        "name": "Gula Jawa"
+        "name": "Gula Jawa",
+        "image": "https://doktersehat.com/wp-content/uploads/2018/12/manfaat-gula-aren-doktersehat.jpg"
     }
 ]

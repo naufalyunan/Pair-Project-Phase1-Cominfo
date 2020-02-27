@@ -1,32 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <%- include('../partials/font-awesome-css.ejs')%>
-    <link rel="stylesheet" href="../public/style.css">
-    <title>Homepage</title>
-  </head>
-  <body>
-    <%- include('../partials/bootstrap-navbar.ejs')%>
-        <div class="row mt-5 no-gutters">
-          <div class="col-md-2 bg-light">
-              <ul class="list-group list-group-flush p-2 pt-4">
-                  <li class="list-group-item bg-success"><i class="fas fa-list"></i> DAFTAR KOMODITAS</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Beras</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Cabai</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Minyak Goreng</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Tepung Terigu</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Bawang Merah</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Ayam Broiler</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Telur Ayam</li>
-                </ul>
-          </div>
-          <div class="col-md-10">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <%- include('../partials/font-awesome-css.ejs')%>
+  <link rel="stylesheet" href="../public/style.css">
+  <title>Homepage</title>
+</head>
+
+<body>
+  <%- include('../partials/bootstrap-navbar.ejs')%>
+  <div class="row mt-5 no-gutters">
+    <div class="col-md-2 bg-light">
+      <div class="data-toggle">
+        <ul class="list-group list-group-flush p-2 pt-5">
+          <li class="list-group-item bg-success"> DAFTAR KOMODITAS</li>
+          <% for(let i = 0; i < commodities.length; i++){ %>
+          <li class="list-group-item bg-light" class="view overlay"><a href="<%=`/commodities/${commodities[i].name}` %>" ><%= commodities[i].name %></a></li>
+          <%}%>
+          <li>
+            <a href="#" class="btn btn-light" data-target="#produk1" data-toggle="modal">Search by Month</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+          <div class="col-md-10 mt-5">
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -49,123 +53,23 @@
                   </a>
                 </div>
 
-                <h4 class="text-center font-weight-bold m-4">PRODUK TERBARU</h4>
-                <div class="row mx-auto">
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="https://i.imgur.com/oeWynJu.jpg" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Cabai</h5>
-                            <p class="card-text">Headphone Bluetooth Free Ongkir</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary" data-target="#produk1" data-toggle="modal">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                        </div>
-                    </div>
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="../public/beras.png" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Beras</h5>
-                            <p class="card-text">Kamera DSLR Canon Type 700D</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary" data-target="#produk2" data-toggle="modal">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 8.000.000</a>
-                        </div>
-                    </div>
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="img/produk/laptop.jpg" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Minyak Goreng</h5>
-                            <p class="card-text">Laptop ASUS RAM 2 GB Layar 14 Inch</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                        </div>
-                    </div>
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="img/produk/speaker.jpg" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Speaker</h5>
-                            <p class="card-text">Speaker Bluetooth Free Ongkir</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                        </div>
-                    </div>                      
-            </div>
-            <div class="row mx-auto mt-5">
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/jacket.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">JACKET</h5>
-                        <p class="card-text">Jacket Kulit Import Bahan Kulit</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
+            <h4 class="text-center font-weight-bold m-4">PRODUK TERBARU</h4>
+            <div class="row mx-auto">
+              <% for(let i = 0; i < commodityTraders.length; i++){%>
+              <div class="card" mr-2 ml-2 style="width: 16rem;">
+                <img src="<%= commodityTraders[i].image %>" class="card-img-top" alt="headphone">
+                <div class="card-body bg-light text-center">
+                  <h5 class="card-title"><%= commodityTraders[i].name %></h5>
+                  <i class="fas fa-star text-success"></i>
+                  <i class="fas fa-star text-success"></i>
+                  <i class="fas fa-star text-success"></i>
+                  <i class="fas fa-star-half-alt text-success"></i>
+                  <i class="far fa-star"></i><br><br>
+                  <a href="#" class="btn btn-danger">Rp <%= commodityTraders[i].avg %></a>
                 </div>
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/usb.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">USB iPhone</h5>
-                        <p class="card-text">USB Khusus iPhone Bahan Nilon</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/ssd.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">SSD Samsung</h5>
-                        <p class="card-text">Eksternal SSD Samsung Kapasitas 500GB</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/sdcard.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">SANDISK SDCARD</h5>
-                        <p class="card-text">Sandisk SD CARD Kapasitas 128 GB</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
-                <br>
+              </div>
+              <%}%>
+              <br>
             </div>
             <div class="modal fade" id="produk1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg" role="document">
@@ -182,109 +86,45 @@
                         <img src="img/produk/headphone.jpg" alt="headphone">
                       </div>
                       <div class="col-md-6">
-                        <table class="table table-borderless">
+                        
+                        <table style="text-align: center;" class="table">
                           <tr>
-                            <th>Nama Produk</th>
-                            <td>Headphone</td>
+                            <th colspan="3" >2019</th>
                           </tr>
                           <tr>
-                              <th>Merk/Type</th>
-                              <td>Boze/5B</td>
+                            <td><a href="/1/2019">January</a></td>
+                            <td><a href="/2/2019">February</a></td>
+                            <td><a href="/3/2019">March</a></td>
                           </tr>
                           <tr>
-                              <th>Biaya Ongkir</th>
-                              <td>Standar</td>
+                            <td><a href="/4/2019">April</a></td>
+                            <td><a href="/5/2019">May</a></td>
+                            <td><a href="/6/2019">June</a></td>
                           </tr>
                           <tr>
-                              <th>Rating Produk</th>
-                              <td>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star-half-alt text-success"></i>
-                                  <i class="far fa-star"></i><br>
-                              </td>
+                            <td><a href="/7/2019">July</a></td>
+                            <td><a href="/8/2019">August</a></td>
+                            <td><a href="/9/2019">September</a></td>
                           </tr>
                           <tr>
-                              <th>Stok Produk</th>
-                              <td>120 Pcs</td>
-                          </tr>
-                          <tr>
-                              <th>Harga</th>
-                              <td>Rp. 300.000</td>
+                            <td><a href="/10/2019">October</a></td>
+                            <td><a href="/11/2019">November</a></td>
+                            <td><a href="/12/2019">December</a></td>
                           </tr>
                         </table>
                       </div>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">KEMBALI</button>
-                    <button type="button" class="btn btn-primary">BELI</button>
+                    <a class="btn btn-danger" data-dismiss="modal">KEMBALI</a>
+                    <a class="btn btn-primary" href="/traders/add"> BELI</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="modal fade" id="produk2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <img src="img/produk/kamera.jpg" alt="kamera">
-                      </div>
-                      <div class="col-md-6">
-                        <table class="table table-borderless">
-                          <tr>
-                            <th>Nama Produk</th>
-                            <td>Kamera DSLR</td>
-                          </tr>
-                          <tr>
-                              <th>Merk/Type</th>
-                              <td>Canon 700D Kit 16-50mm</td>
-                          </tr>
-                          <tr>
-                              <th>Biaya Ongkir</th>
-                              <td>Standar</td>
-                          </tr>
-                          <tr>
-                              <th>Rating Produk</th>
-                              <td>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star-half-alt text-success"></i>
-                                  <i class="far fa-star"></i><br>
-                              </td>
-                          </tr>
-                          <tr>
-                              <th>Stok Produk</th>
-                              <td>120 Pcs</td>
-                          </tr>
-                          <tr>
-                              <th>Harga</th>
-                              <td>Rp. 8.000.000</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">KEMBALI</button>
-                    <button type="button" class="btn btn-primary">BELI</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
         </div>
 
-        <footer id="footer" class="bg-dark text-white p-5">
+        <footer id="footer" class="bg-dark text-white p-5 mt-5">
           <div class="row">
             <div class="col-md-3">
                 <h5>LAYANAN PELANGGAN</h5>

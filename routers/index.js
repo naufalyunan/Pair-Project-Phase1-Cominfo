@@ -12,4 +12,5 @@ router.use('/conjunction', routerConj)
 router.get('/login', Controller.getLogin)
 router.post('/login', Controller.postLogin)
 router.get('/logout', Controller.logout)
+router.get('/:bulan/:tahun', Controller.getHomeVar)
 module.exports = router;

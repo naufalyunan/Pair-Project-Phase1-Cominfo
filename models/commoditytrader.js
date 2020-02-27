@@ -1,6 +1,11 @@
 'use strict';
+const averaging = require('./../helper/helper')
 module.exports = (sequelize, DataTypes) => {
-  class CommodityTrader extends sequelize.Sequelize.Model {}
+  class CommodityTrader extends sequelize.Sequelize.Model {
+    static getAverage(arrays){
+      return averaging(arrays)
+    }
+  }
 
   CommodityTrader.init({
     // Model attributes are defined here
