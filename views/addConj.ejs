@@ -3,33 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Document</title>
 </head>
+<style>
+  body  {
+    background-image: url('../public/img/bg.jpg');
+    background-size: cover;
+  }
+  #con {
+    margin-top: 150px;
+    font-size: 20px;
+  }
+  #con2{
+    margin-left: 350px;
+    background-color: grey;
+    opacity: 0.9;
+    padding: 40px;
+    border-radius: 1.5ch;
+
+  }
+  #label1 {
+    margin-right: 100px;
+  }
+  #label2 {
+    margin-right: 1px;
+  }
+  #loc {
+    margin-right: 169px;
+  }
+</style>
 <body>
-    <form id="form" method="POST" action=  "/conjunction/add" >
+  <div class="container" id="con">
+    <div class="col-md-5" id="con2">
+      <form id="form" method="POST" action= "/conjunction/add" >
         <div class="form-group">
-          <label for="TraderId">Trader's Name</label>
-          <select name="TraderId">
+          <label for="TraderId" id="label1">Trader's Name : </label>
+            <select name="TraderId" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
               <option value="">---SELECT---</option>
-            <% for(let i = 0; i < traders.length; i++){ %>
+              <% for(let i = 0; i < traders.length; i++){ %>
                 <option value= <%= traders[i].dataValues.id %> ><%= traders[i].dataValues.name %></option>
+              <%}%>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="CommodityId" id="label2">Commodity Name : </label>
+            <select name="CommodityId">
+              <option value="" class="form-control">---SELECT---</option>
+            <% for(let i = 0; i < commodities.length; i++){ %>
+                <option value= <%= commodities[i].dataValues.id %> ><%= commodities[i].dataValues.name %></option>
             <%}%>
-          </select>
-          <label for="CommodityId">Commodity Name</label>
-          <select name="CommodityId">
-            <option value="">---SELECT---</option>
-          <% for(let i = 0; i < commodities.length; i++){ %>
-              <option value= <%= commodities[i].dataValues.id %> ><%= commodities[i].dataValues.name %></option>
-          <%}%>
-        </select>
-          <label for="price">Price</label>
-          <input type="number" name="price" class="form-control" id="inputAddress"  required>
-          <label for="date">Date</label>
-          <input type="date" name="date" class="form-control" id="inputAddress"  required>
-          <label for="location">Location</label>
-          <input type="text" name="location" class="form-control" id="inputAddress"  required>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button> <a href="/" type="submit" class="btn btn-danger">Cancel</a>
-    </form>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" name="price" class="form-control" id="inputAddress"  required>
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" name="date" class="form-control" id="inputAddress"  required>
+          </div>
+          <div class="form-group">
+            <label for="location" id="loc">Location</label>
+            <select name="location">
+              <option value="">Pasar Senen</option>
+              <option value="">Pasar Selase</option>
+              <option value="">Pasar Rabu</option>
+              <option value="">Pasar Kamis</option>
+              <option value="">Pasar Jumat</option>
+              <option value="">Pasar Sabtu</option>
+              <option value="">Pasar Senen</option>
+              <option value="">Pasar Senen</option>
+              <option value="">Pasar Senen</option>
+              <option value="">Pasar Senen</option>
+              <option value="">Pasar Senen</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button> <a href="/" type="submit" class="btn btn-danger">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
+
