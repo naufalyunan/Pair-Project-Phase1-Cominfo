@@ -49,133 +49,20 @@
                 <div class="row mx-auto">
                   <% for(let i = 0; i < commodityTraders.length; i++){%>
                     <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="https://i.imgur.com/oeWynJu.jpg" class="card-img-top" alt="headphone">
+                        <img src="https://i.imgur.com/oeWynJu.jpg" class="card-img-top" alt="img">
                         <div class="card-body bg-light text-center">
                             <h5 class="card-title"><%= commodityTraders[i].name %></h5>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary" data-target="#produk1" data-toggle="modal">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp <%= commodityTraders[i].avg %></a>
+                              <br>
+                            <a href="#" class="btn btn-primary" data-toggle="modal">Detail</a>
+                            <a href="#" class="btn btn-success">Rp <%= commodityTraders[i].avg %></a>
                         </div>
                     </div>
                   <%}%>
                 <br>
             </div>
-            <div class="modal fade" id="produk1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <img src="img/produk/headphone.jpg" alt="headphone">
-                      </div>
-                      <div class="col-md-6">
-                        <table class="table table-borderless">
-                          <tr>
-                            <th>Nama Produk</th>
-                            <td>Headphone</td>
-                          </tr>
-                          <tr>
-                              <th>Merk/Type</th>
-                              <td>Boze/5B</td>
-                          </tr>
-                          <tr>
-                              <th>Biaya Ongkir</th>
-                              <td>Standar</td>
-                          </tr>
-                          <tr>
-                              <th>Rating Produk</th>
-                              <td>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star text-success"></i>
-                                  <i class="fas fa-star-half-alt text-success"></i>
-                                  <i class="far fa-star"></i><br>
-                              </td>
-                          </tr>
-                          <tr>
-                              <th>Stok Produk</th>
-                              <td>120 Pcs</td>
-                          </tr>
-                          <tr>
-                              <th>Harga</th>
-                              <td>Rp. 300.000</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">KEMBALI</button>
-                    <button type="button" class="btn btn-primary">BELI</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal fade" id="produk2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <img src="img/produk/kamera.jpg" alt="kamera">
-                      </div>
-                      <div class="col-md-6">
-                        <table class="table table-borderless">
-                          <tr>
-                            <th>Nama Produk</th>
-                            <td>Kamera DSLR</td>
-                          </tr>
-                          <tr>
-                              <th>Merk/Type</th>
-                              <td>Canon 700D Kit 16-50mm</td>
-                          </tr>
-                          <tr>
-                              <th>Biaya Ongkir</th>
-                              <td>Standar</td>
-                          </tr>
-                          <tr>
-                              <th>Rating Produk</th>
-              
-                          </tr>
-                          <tr>
-                              <th>Stok Produk</th>
-                              <td>120 Pcs</td>
-                          </tr>
-                          <tr>
-                              <th>Harga</th>
-                              <td>Rp. 8.000.000</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">KEMBALI</button>
-                    <button type="button" class="btn btn-primary">BELI</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
         </div>
 
-        <footer id="footer" class="bg-dark text-white p-5">
+        <footer id="footer" class="bg-dark text-white p-5 mt-5">
           <div class="row">
             <div class="col-md-3">
                 <h5>LAYANAN PELANGGAN</h5>
