@@ -2,7 +2,7 @@ const { Trader } = require('./../models')
 class Controller{
     static getHome(req,res){
         // res.send('WELCOME TO HOME')
-        res.render('home')
+        res.render('login-form')
     }
     static getLogin(req,res){
         res.render('loginPage')

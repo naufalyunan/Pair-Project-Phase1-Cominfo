@@ -12,45 +12,7 @@
     <title>Homepage</title>
   </head>
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
-            <div class="container">
-                <h3><i class="fas fa-cart-arrow-down text-success mr-2"></i></h3>
-                <a class="navbar-brand font-weight-bold" href="#">Comodity Information</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto mr-4">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                       <a class="nav-link" href="#">Reseller<span class="sr-only">(current)</span></a>
-                      </li>
-                    <li class="nav-item active">
-                       <a class="nav-link" href="#">Hubungi Kami<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Bantuan<span class="sr-only">(current)</span></a>
-                    </li>
-                      
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                  <div class="icon mt-2">
-                    <h5>
-                      <i class="fas fa-cart-arrow-down ml-3 mr-3"></i>
-                      <i class="fas fa-envelope mr-3"></i>
-                      <i class="fas fa-bell mr-3"></i>
-                    </h5>
-                  </div>
-                </div>
-            </div>
-        </nav>
-
+    <%- include('../partials/bootstrap-navbar.ejs')%>
         <div class="row mt-5 no-gutters">
           <div class="col-md-2 bg-light">
               <ul class="list-group list-group-flush p-2 pt-4">
@@ -71,10 +33,10 @@
                       <img src="https://i.imgur.com/mIkTLpB.png" class="d-block w-100" alt="slide1">
                     </div>
                     <div class="carousel-item">
-                      <img src="https://i.imgur.com/mIkTLpB.png" class="d-block w-100" alt="slide2">
+                      <img src="https://i.imgur.com/oeWynJu.jpg" class="d-block w-100" alt="slide2">
                     </div>
                     <div class="carousel-item">
-                      <img src="https://i.imgur.com/mIkTLpB.png" class="d-block w-100" alt="slide3">
+                      <img src="https://i.imgur.com/MfdDKbZ.jpg" class="d-block w-100" alt="slide3">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -90,7 +52,7 @@
                 <h4 class="text-center font-weight-bold m-4">PRODUK TERBARU</h4>
                 <div class="row mx-auto">
                     <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="img/produk/headphone.jpg" class="card-img-top" alt="headphone">
+                        <img src="https://i.imgur.com/oeWynJu.jpg" class="card-img-top" alt="headphone">
                         <div class="card-body bg-light text-center">
                             <h5 class="card-title">Cabai</h5>
                             <p class="card-text">Headphone Bluetooth Free Ongkir</p><br>
@@ -106,7 +68,7 @@
                     <div class="card" mr-2 ml-2 style="width: 16rem;">
                         <img src="../public/beras.png" class="card-img-top" alt="headphone">
                         <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Kamera</h5>
+                            <h5 class="card-title">Beras</h5>
                             <p class="card-text">Kamera DSLR Canon Type 700D</p><br>
                             <i class="fas fa-star text-success"></i>
                             <i class="fas fa-star text-success"></i>
@@ -120,7 +82,7 @@
                     <div class="card" mr-2 ml-2 style="width: 16rem;">
                         <img src="img/produk/laptop.jpg" class="card-img-top" alt="headphone">
                         <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Laptop ASUS</h5>
+                            <h5 class="card-title">Minyak Goreng</h5>
                             <p class="card-text">Laptop ASUS RAM 2 GB Layar 14 Inch</p><br>
                             <i class="fas fa-star text-success"></i>
                             <i class="fas fa-star text-success"></i>
