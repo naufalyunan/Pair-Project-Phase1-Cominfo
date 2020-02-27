@@ -2,6 +2,7 @@ const router = require('express').Router();
 const ControllerConj = require('./../controllers/controllerConj')
 
 router.get('/', ControllerConj.getConj)
+router.get('/search/:name', ControllerConj.getConjByName)
 router.get('/add', (req,res, next) => {
     if (req.session.isLogin) {
         next()
