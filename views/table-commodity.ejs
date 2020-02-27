@@ -8,17 +8,18 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Commodity Table</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <div class="display-flex align-center">
                     <h6 class="m-0 font-weight-bold text-dark">TABLE COMMODITIES</h6>
-                    <div class="ml-auto display-flex align-center">
-                      <input type="text" name="" class="form-control" placeholder="Search">
-                      <button class="btn btn-md btn-primary ml-2">Search</button>
-                    </div>
                   </div>
                 </div>
                 <div class="card-body">
@@ -26,12 +27,13 @@
                     <table class="table table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Id</th>
+                          <th>#</th>
                           <th>Trader Name</th>
                           <th>Commodity Name</th>
                           <th>Price</th>
                           <th>Date</th>
                           <th>Location</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -43,6 +45,7 @@
                             <td> <%= searched[i].dataValues.price %> </td>
                             <td> <%= searched[i].dataValues.date %> </td>
                             <td> <%= searched[i].dataValues.location %> </td>
+                            <td> <a href="" class="btn btn-primary">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
                           </tr>
                         <%} %>
                       </tbody>
