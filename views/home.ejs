@@ -12,18 +12,65 @@
     <title>Homepage</title>
   </head>
   <body>
-    <%- include('../partials/bootstrap-navbar.ejs')%>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
+            <div class="container">
+                <h3><i class="fas fa-cart-arrow-down text-success mr-2"></i></h3>
+                <a class="navbar-brand font-weight-bold" href="#">Comodity Information</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto mr-4">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/">Beranda<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lokasi Pasar
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <% for(let i = 0; i < result.length; i++){ %>
+                          <a class="dropdown-item" href="#"><%= result[i].DISTINCT %></a>
+                        <%}%>
+                      </div>
+                    </li>
+                    <li class="nav-item active">
+                       <a class="nav-link" href="#">Hubungi Kami<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/traders/add">Add Trader<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/commodities/add">Add Commodity<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/conjunction/add">Add data<span class="sr-only">(current)</span></a>
+                </li>
+                      
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                  <div class="icon mt-2">
+                    <h5>
+                      <i class="fas fa-cart-arrow-down ml-3 mr-3"></i>
+                      <i class="fas fa-envelope mr-3"></i>
+                      <i class="fas fa-bell mr-3"></i>
+                    </h5>
+                  </div>
+                </div>
+            </div>
+        </nav>
+
         <div class="row mt-5 no-gutters">
           <div class="col-md-2 bg-light">
               <ul class="list-group list-group-flush p-2 pt-4">
                   <li class="list-group-item bg-success"><i class="fas fa-list"></i> DAFTAR KOMODITAS</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Beras</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Cabai</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Minyak Goreng</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Tepung Terigu</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Bawang Merah</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Ayam Broiler</li>
-                  <li class="list-group-item"><i class="fas fa-angle-right"></i> Telur Ayam</li>
+                  <% for(let i = 0; i < commodities.length; i++){ %>
+                    <li class="list-group-item"><i class="fas fa-angle-right"></i> <%= commodities[i].name %></li>
+                  <%}%>
                 </ul>
           </div>
           <div class="col-md-10">
@@ -51,120 +98,21 @@
 
                 <h4 class="text-center font-weight-bold m-4">PRODUK TERBARU</h4>
                 <div class="row mx-auto">
+                  <% for(let i = 0; i < commodityTraders.length; i++){%>
                     <div class="card" mr-2 ml-2 style="width: 16rem;">
                         <img src="https://i.imgur.com/oeWynJu.jpg" class="card-img-top" alt="headphone">
                         <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Cabai</h5>
-                            <p class="card-text">Headphone Bluetooth Free Ongkir</p><br>
+                            <h5 class="card-title"><%= commodityTraders[i].name %></h5>
                             <i class="fas fa-star text-success"></i>
                             <i class="fas fa-star text-success"></i>
                             <i class="fas fa-star text-success"></i>
                             <i class="fas fa-star-half-alt text-success"></i>
                             <i class="far fa-star"></i><br><br>
                             <a href="#" class="btn btn-primary" data-target="#produk1" data-toggle="modal">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 300.000</a>
+                            <a href="#" class="btn btn-danger">Rp <%= commodityTraders[i].avg %></a>
                         </div>
                     </div>
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="../public/beras.png" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Beras</h5>
-                            <p class="card-text">Kamera DSLR Canon Type 700D</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary" data-target="#produk2" data-toggle="modal">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 8.000.000</a>
-                        </div>
-                    </div>
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="img/produk/laptop.jpg" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Minyak Goreng</h5>
-                            <p class="card-text">Laptop ASUS RAM 2 GB Layar 14 Inch</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                        </div>
-                    </div>
-                    <div class="card" mr-2 ml-2 style="width: 16rem;">
-                        <img src="img/produk/speaker.jpg" class="card-img-top" alt="headphone">
-                        <div class="card-body bg-light text-center">
-                            <h5 class="card-title">Speaker</h5>
-                            <p class="card-text">Speaker Bluetooth Free Ongkir</p><br>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star text-success"></i>
-                            <i class="fas fa-star-half-alt text-success"></i>
-                            <i class="far fa-star"></i><br><br>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                        </div>
-                    </div>                      
-            </div>
-            <div class="row mx-auto mt-5">
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/jacket.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">JACKET</h5>
-                        <p class="card-text">Jacket Kulit Import Bahan Kulit</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/usb.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">USB iPhone</h5>
-                        <p class="card-text">USB Khusus iPhone Bahan Nilon</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/ssd.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">SSD Samsung</h5>
-                        <p class="card-text">Eksternal SSD Samsung Kapasitas 500GB</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
-                <div class="card" mr-2 ml-2 style="width: 16rem;">
-                    <img src="img/produk/sdcard.jpg" class="card-img-top" alt="headphone">
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title">SANDISK SDCARD</h5>
-                        <p class="card-text">Sandisk SD CARD Kapasitas 128 GB</p><br>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star text-success"></i>
-                        <i class="fas fa-star-half-alt text-success"></i>
-                        <i class="far fa-star"></i><br><br>
-                        <a href="#" class="btn btn-primary">Detail</a>
-                        <a href="#" class="btn btn-danger">Rp. 300.000</a>
-                    </div>
-                </div>
+                  <%}%>
                 <br>
             </div>
             <div class="modal fade" id="produk1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -1,6 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  class CommodityTrader extends sequelize.Sequelize.Model {}
+  class CommodityTrader extends sequelize.Sequelize.Model {
+    static getAverage(arrays){
+      let sum = arrays.reduce((a, b) => a + b, 0)
+      let average = sum/arrays.length
+      return average
+    }
+  }
 
   CommodityTrader.init({
     // Model attributes are defined here
