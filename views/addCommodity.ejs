@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../public//addConj.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Document</title>
+    <style>
+        body {
+            background-image: url('../public/img/bg.jpg');
+        }
+        #con2 {
+            margin-top: 100px;
+        }
+    </style>
 </head>
 <body>
-    <form id="form" method="POST" action="/commodities/add">
+  <div class="container" id="con">
+    <div class="col-md-5" id="con2">
+      <form id="form" method="POST" action= "/conjunction/add" >
         <div class="form-group">
-          <label for="name">Comodity Name</label>
-          <input type="text" name="name" class="form-control" id="inputAddress" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button> <a href="/" type="submit" class="btn btn-danger">Cancel</a>
-    </form>
+            <label for="name">Comodity Name</label>
+            <input type="text" name="name" class="form-control" id="inputAddress" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button> <a href="/" type="submit" class="btn btn-danger">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
