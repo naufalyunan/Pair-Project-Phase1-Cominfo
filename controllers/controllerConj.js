@@ -1,8 +1,10 @@
 const { CommodityTrader,Trader,Commodity } = require('./../models')
+const fs = require('fs')
 class ControllerConj{
     static getConj(req,res){
         res.send(`LIST CONJUNCTION INCLUDE INCLUDE`)
     }
+
     static getConjByName(req,res){
         let name = req.params.name
         CommodityTrader.findAll({
@@ -15,13 +17,44 @@ class ControllerConj{
                         searched.push(el)
                     }
                 })
-                res.render('table-commodity', { searched })
+                let months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                searched.forEach(el => {
+                    el.dataValues.month = el.dataValues.date.getMonth() + 1
+                })
+                let data = [];
+                for(let i = 0; i < months.length; i++) {
+                    let newObj = {}
+                    searched.forEach(el => {
+                        if (!newObj[months[i]]) {
+                            newObj[months[i]] = []
+                        }
+                        if(el.dataValues.month === months[i]){
+                            newObj[months[i]].push(el.dataValues.price)
+                        }
+                    })
+                    if(newObj[months[i]].length === 0){
+                        newObj[months[i]].push(0)
+                    }
+                    data.push(newObj)
+                }
+                let j = 1;
+                let priceData = []
+                for (let i = 0; i < data.length; i++) {
+                    data[i][j] = CommodityTrader.getAverage(data[i][j]) 
+                    priceData.push(data[i][j])
+                    j++  
+                }
+                let stringData = priceData.join(',')
+                console.log(priceData)
+                fs.writeFileSync('./data.csv',stringData)
+                res.render('table-commodity', { searched, priceData })
                 
             })
             .catch(err => {
                 res.send(err)
             })
     }
+
     static getAdd(req,res){
         Trader.findAll()
             .then(traders => {
