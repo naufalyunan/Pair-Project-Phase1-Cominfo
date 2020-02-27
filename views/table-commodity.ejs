@@ -7,9 +7,57 @@
     <link rel="stylesheet" href="../public/table.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+
+  <script>
+    var ctx = document.getElementsById("myChart");
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            datasets: [{
+                type: 'line',
+                yAxisID: 'temperature',
+                backgroundColor: 'transparent',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                tension: 0,
+                fill: false
+            }, {
+                yAxisID: 'precipitation',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'transparent'
+            }]
+        },
+        plugins: [ChartDataSource],
+        options: {
+            scales: {
+                yAxes: [{
+                    id: 'temperature',
+                    gridLines: {
+                        drawOnChartArea: false
+                    }
+                }, {
+                    id: 'precipitation',
+                    position: 'right',
+                    gridLines: {
+                        drawOnChartArea: false
+                    }
+                }]
+            },
+            plugins: {
+                datasource: {
+                    url: 'sample-dataset.csv'
+                }
+            }
+        }
+    });
+  </script> -->
     <title>Commodity Table</title>
 </head>
 <body>
+  <canvas id="myChart" width="900" height="500"></canvas>
     <div class="container">
         <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -19,6 +67,37 @@
                       <input type="text" name="" class="form-control" placeholder="Search">
                       <button class="btn btn-md btn-primary ml-2">Search</button>
                     </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Januari</th>
+                          <th>Februari</th>
+                          <th>Maret</th>
+                          <th>April</th>
+                          <th>Mei</th>
+                          <th>Juni</th>
+                          <th>Juli</th>
+                          <th>Agustus</th>
+                          <th>September</th>
+                          <th>Oktober</th>
+                          <th>November</th>
+                          <th>Desember</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Average Price</td>
+                          <% for(let i = 0; i < priceData.length; i++){%>
+                            <td> <%= priceData[i] %> </td>
+                          <%} %>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
                 <div class="card-body">
@@ -51,5 +130,7 @@
                 </div>
               </div>
     </div>
+    
+
 </body>
 </html>
