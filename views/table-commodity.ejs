@@ -45,7 +45,7 @@
                             <td> <%= searched[i].dataValues.price %> </td>
                             <td> <%= searched[i].dataValues.date %> </td>
                             <td> <%= searched[i].dataValues.location %> </td>
-                            <td> <a href="" class="btn btn-primary">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
+                            <td> <a href="/conjunction/edit/<%= searched[i].dataValues.id %>" class="btn btn-primary">Edit</a> <a href="conjunction/delete/<%= searched[i].dataValues.id %>" class="btn btn-danger">Delete</a></td>
                           </tr>
                         <%} %>
                       </tbody>
