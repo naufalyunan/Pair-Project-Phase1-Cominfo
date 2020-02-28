@@ -47,7 +47,9 @@ class ControllerConj{
                 let stringData = priceData.join(',')
                 console.log(priceData)
                 fs.writeFileSync('./data.csv',stringData)
-                res.render('table-commodity', { searched, priceData })
+                let url = `https://quickchart.io/chart?c={type:'line',data:{labels:['January','February','March','April','May','June','July','August','Sept','Oct','Nov','Dec'],datasets:[{label:'Price',data:[${priceData}],fill:false,borderColor:'orange'}]}}`
+                console.log(url)
+                res.render('table-commodity', { searched, priceData, url })
                 
             })
             .catch(err => {

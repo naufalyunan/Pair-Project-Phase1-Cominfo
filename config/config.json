@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "naufalyunan",
+    "password": "naufalyunan",
+    "database": "ComInfoApp",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "ynklccnutdtzdx",
+    "password": "69e46ee1caf859820d4cdca463d1bd45ada2473886a95bb40c243b70d441dd1c",
+    "database": "d7s8s9a1cc9q7u",
+    "host": "ec2-50-17-178-87.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "port": 5432
+  }
+}

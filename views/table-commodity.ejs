@@ -7,53 +7,6 @@
     <link rel="stylesheet" href="../public/table.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
-
-  <script>
-    var ctx = document.getElementsById("myChart");
-    var chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            datasets: [{
-                type: 'line',
-                yAxisID: 'temperature',
-                backgroundColor: 'transparent',
-                borderColor: 'rgb(255, 99, 132)',
-                pointBackgroundColor: 'rgb(255, 99, 132)',
-                tension: 0,
-                fill: false
-            }, {
-                yAxisID: 'precipitation',
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'transparent'
-            }]
-        },
-        plugins: [ChartDataSource],
-        options: {
-            scales: {
-                yAxes: [{
-                    id: 'temperature',
-                    gridLines: {
-                        drawOnChartArea: false
-                    }
-                }, {
-                    id: 'precipitation',
-                    position: 'right',
-                    gridLines: {
-                        drawOnChartArea: false
-                    }
-                }]
-            },
-            plugins: {
-                datasource: {
-                    url: 'sample-dataset.csv'
-                }
-            }
-        }
-    });
-  </script> -->
     <title>Commodity Table</title>
     <style>
         body {
@@ -69,9 +22,11 @@
                     <h6 class="m-0 font-weight-bold text-dark">TABLE COMMODITIES</h6>
                   </div>
                 </div>
+                <h5 style="text-align: center;">Price-Time Table</h5>
+                <img class="img-fluid img-thumbnail" style="margin: 0 auto" width="500" src=<%= url %>>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-bordered" width="100%" cellspacing="0">
+                    <!-- <table class="table table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
                           <th>#</th>
@@ -97,7 +52,7 @@
                           <%} %>
                         </tr>
                       </tbody>
-                    </table>
+                    </table> -->
                   </div>
                 </div>
                 <div class="card-body">
