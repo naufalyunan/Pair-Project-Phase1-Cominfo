@@ -15,6 +15,12 @@
     <%- include('../partials/font-awesome-css.ejs')%>
     <link rel="stylesheet" href="../public/style.css">
   <title>Homepage</title>
+  <style>
+    #im {
+      width: auto;
+      height: 200px;
+    }
+  </style>
 </head>
 <body>
   <%- include('../partials/bootstrap-navbar.ejs')%>
@@ -60,7 +66,7 @@
             <div class="row mx-auto">
               <% for(let i = 0; i < commodityTraders.length; i++){%>
                 <div class="card" style="width: 18rem;">
-                  <img class="card-img-top img-responsive" src="<%= commodityTraders[i].image %>" alt="Card image cap">
+                  <img class="card-img-top img-responsive" id="im" src="<%= commodityTraders[i].image %>" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title"><%= commodityTraders[i].name %></h5>
                       <a href= "<%= `/conjunction/search/${commodityTraders[i].name}` %>" class="btn btn-danger">Rp <%= commodityTraders[i].avg %></a>
