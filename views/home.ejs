@@ -60,7 +60,7 @@
             <div class="row mx-auto">
               <% for(let i = 0; i < commodityTraders.length; i++){%>
                 <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="<%= commodityTraders[i].image %>" alt="Card image cap">
+                  <img class="card-img-top img-responsive" src="<%= commodityTraders[i].image %>" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title"><%= commodityTraders[i].name %></h5>
                       <a href= "<%= `/conjunction/search/${commodityTraders[i].name}` %>" class="btn btn-danger">Rp <%= commodityTraders[i].avg %></a>
