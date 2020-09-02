@@ -10,6 +10,7 @@ class Controller{
                             include: [Trader, Commodity]
                         })
                             .then(commodityTraders => {
+                                // console.log(commodityTraders);
                                 commodityTraders.forEach(el => {
                                     let date = el.dataValues.date
                                     let month = date.getMonth()
